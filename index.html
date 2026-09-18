@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burak Öncel — Data &amp; Applied AI</title>
+<meta name="description" content="Management Information Systems student working on data analytics, business intelligence and applied AI. Projects with measured results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F8F7;
+    --ink:#1B2430;
+    --muted:#5C6A78;
+    --rule:#DCE2E3;
+    --mark:#1F5C4A;
+    --measure:68ch;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#141A1F;
+      --ink:#E8ECEC;
+      --muted:#93A1AC;
+      --rule:#2A343B;
+      --mark:#6FD3B2;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:clamp(3rem,8vw,6rem) clamp(1.25rem,5vw,2rem) 4rem}
+  a{color:inherit}
+  a:focus-visible{outline:2px solid var(--mark);outline-offset:3px;border-radius:2px}
+
+  /* masthead */
+  h1{
+    font-size:clamp(2rem,6vw,2.75rem);
+    font-weight:600;
+    letter-spacing:-0.02em;
+    line-height:1.1;
+    margin:0 0 .6rem;
+  }
+  .role{
+    margin:0 0 2.5rem;
+    max-width:var(--measure);
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+
+  /* the measured run — a real sequence, so it reads as one */
+  .run{
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:1.4rem 0 1.5rem;
+    margin:0 0 1rem;
+  }
+  .run-rows{display:flex;gap:clamp(1.5rem,6vw,3.5rem);margin:0 0 .9rem;flex-wrap:wrap}
+  .run-step{display:flex;flex-direction:column;gap:.15rem}
+  .run-score{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:clamp(1.5rem,5vw,2rem);
+    font-weight:500;
+    font-variant-numeric:tabular-nums;
+    letter-spacing:-0.01em;
+  }
+  .run-step:last-child .run-score{color:var(--mark)}
+  .run-when{font-size:.86rem;color:var(--muted)}
+  .run-note{margin:0;max-width:var(--measure);color:var(--muted);font-size:.95rem}
+  .run-note a{color:var(--mark);text-decoration-thickness:1px;text-underline-offset:3px}
+
+  /* projects as ruled entries, not cards */
+  h2{
+    font-size:.95rem;
+    font-weight:600;
+    margin:3.25rem 0 0;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--rule);
+    color:var(--muted);
+  }
+  .entry{padding:1.6rem 0;border-bottom:1px solid var(--rule)}
+  .entry h3{
+    font-size:1.12rem;
+    font-weight:600;
+    margin:0 0 .15rem;
+    letter-spacing:-0.01em;
+  }
+  .entry h3 a{text-decoration:none;background-image:linear-gradient(var(--mark),var(--mark));background-size:100% 1px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:1px}
+  .entry h3 a:hover{background-size:100% 2px}
+  .when{margin:0 0 .6rem;font-size:.86rem;color:var(--muted)}
+  .entry p{margin:0 0 .75rem;max-width:var(--measure)}
+  .stack{
+    margin:0;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.8rem;
+    color:var(--muted);
+  }
+
+  /* contact */
+  .contact{margin-top:3rem}
+  .contact ul{list-style:none;margin:1.2rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 2rem}
+  .contact a{text-decoration-thickness:1px;text-underline-offset:4px}
+  footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Burak Öncel</h1>
+    <p class="role">
+      Third-year Management Information Systems student in Istanbul, working on
+      data analytics, business intelligence and applied AI. I care about whether
+      a system actually works, which usually means measuring it.
+    </p>
+  </header>
+
+  <section class="run" aria-label="Text-to-SQL accuracy across three iterations">
+    <div class="run-rows">
+      <div class="run-step">
+        <span class="run-score">60%</span>
+        <span class="run-when">baseline prompt</span>
+      </div>
+      <div class="run-step">
+        <span class="run-score">80%</span>
+        <span class="run-when">output rules added</span>
+      </div>
+      <div class="run-step">
+        <span class="run-score">95%</span>
+        <span class="run-when">third iteration</span>
+      </div>
+    </div>
+    <p class="run-note">
+      Query accuracy of my text-to-SQL agent, measured against 20 hand-written
+      reference queries. Two of the remaining failures turned out to be mistakes
+      in my own reference set —
+      <a href="https://github.com/burakoncel10-bit/text-to-sql-agent">the write-up is here</a>.
+    </p>
+  </section>
+
+  <h2>Projects</h2>
+
+  <article class="entry">
+    <h3><a href="https://github.com/burakoncel10-bit/text-to-sql-agent">Text-to-SQL Agent with Evaluation Harness</a></h3>
+    <p class="when">Personal project, 2026</p>
+    <p>
+      Ask a retail database a question in plain English and get the answer back
+      together with the SQL that produced it. The agent reads the live schema,
+      generates a query, refuses anything that is not read-only, and runs it.
+      The interesting part is the evaluation: 20 reference questions across eight
+      query types, scored on whether the returned rows match, not on how the SQL
+      is spelled.
+    </p>
+    <p class="stack">Python · SQLite · Gemini · Streamlit</p>
+  </article>
+
+  <article class="entry">
+    <h3><a href="https://github.com/burakoncel10-bit/erasmus-guide-agent">Erasmus Guide — AI Tutor Agent</a></h3>
+    <p class="when">Personal project, ongoing</p>
+    <p>
+      A tutor agent for the Erasmus English proficiency exam, built as an
+      orchestrator plus seven reference modules that load only when the task
+      needs them. Six operating modes, a fifty-point essay rubric with a fixed
+      report format so feedback stays comparable week to week, and a deliberate
+      refusal to invent listening transcripts when real audio is what the
+      student needs.
+    </p>
+    <p class="stack">Claude Code · Agent Skills · Markdown</p>
+  </article>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="mailto:burakoncel10@gmail.com">burakoncel10@gmail.com</a></li>
+      <li><a href="https://github.com/burakoncel10-bit">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/burak-öncel-2566b8359">LinkedIn</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    Looking for a data analyst, business intelligence or applied AI internship.
+  </footer>
+
+</div>
+</body>
+</html>
